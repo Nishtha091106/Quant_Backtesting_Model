@@ -35,8 +35,11 @@ def download_stock_data(
         return None
     
 if __name__ == "__main__":
-    download_stock_data(
+    df=download_stock_data(
         tickers="AAPL",
         start_date="2024-01-01",
         end_date="2025-01-01"
     )
+
+    df["Daily_Retuns"]=df["Close"].pct_change()
+    print(df.describe())

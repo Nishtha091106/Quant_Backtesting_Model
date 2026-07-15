@@ -218,4 +218,8 @@ __marimo__/
 .streamlit/secrets.toml
 
 #Git
+<<<<<<< HEAD
 data/raw/*.csv
+=======
+data/raw/*.csv
+>>>>>>> b5fe54a (Implement daily return calculation)
