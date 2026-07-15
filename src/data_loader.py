@@ -42,4 +42,5 @@ if __name__ == "__main__":
     )
 
     df["Daily_Retuns"]=df["Close"].pct_change()
-    print(df.describe())
+    
+    #print(df.describe())
