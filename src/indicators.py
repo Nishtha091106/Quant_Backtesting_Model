@@ -5,29 +5,26 @@ def calculate_moving_average(
         df,
         window
 ):
-    """     """
+    """ 
+    Calculates the moving average for a given window.
+
+    Parameters:
+        df (DataFrame): Stock price data.
+        window (int): Moving average window size.
+
+    Returns:
+        DataFrame: Updated DataFrame with a new MA column.
+    """
 
     try:
 
         if window<=0:
-            print("Error: Invalid window size")
-            return None
+            raise ValueError("Window size must be greater than zero.")
         
-        df["MA_{window}"]=df["Close"].window(window).mean()
+        df[f"MA_{window}"]=df["Close"].rolling(window=window).mean()
         return df
     
     except Exception as e:
         print(f"Error occured: {e}")
         return None
-    
-
-if __name__ == "__main__":
-    data_ma=calculate_moving_average(
-        df="AAPL_2024-01-01_2025-01-01.csv",
-        window=3
-    )
-
-    data_ma
-
-
 
